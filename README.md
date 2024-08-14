@@ -35,7 +35,7 @@ A starter django + next.js project is provided with the built in neo4j connector
 
 To run the codebase on your end, make sure you have [docker](https://docs.docker.com/engine/install/) and [docker compose](https://docs.docker.com/compose/install/) installed on your machine.
 
-Then, run the commend `docker compose up`
+Then, run the commend `ENVIRONMENT=development docker compose up`
 
 Frontend will be accessible on http://localhost:3000<br/>
 Backend will be accessible on http://localhost:8000
