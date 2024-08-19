@@ -33,6 +33,8 @@ export default function TopNavbar({ setCompanyName, setIs_searching }) {
     setCompany_list([]);
     setCompanyquery("");
     setCompanycat("");
+    // setIsquery("");
+    setIs_searching(true);
     setCompanyName(name);
     console.log(name);
   };
@@ -74,6 +76,7 @@ export default function TopNavbar({ setCompanyName, setIs_searching }) {
   };
   useEffect(() => {
     const handelselectedCat = async () => {
+      if (!companyCat) return;
       console.log("selected cat is ", companyCat);
       try {
         const response = await fetch(
@@ -102,7 +105,7 @@ export default function TopNavbar({ setCompanyName, setIs_searching }) {
   }, [companyCat]);
   useEffect(() => {
     console.log("company_list is updated");
-    setIs_searching(false);
+    // setIs_searching(false);
   }, [company_list]);
   return (
     <div className=" w-full h-fit">
@@ -110,8 +113,10 @@ export default function TopNavbar({ setCompanyName, setIs_searching }) {
         <input
           className="h-7"
           placeholder="search by company name"
+          value={companyQuery}
           onChange={(e) => {
             setCompanyquery(e.target.value);
+
             setIs_searching(false);
           }}
         />
