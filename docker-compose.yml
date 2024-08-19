@@ -1,8 +1,7 @@
 # docker system prune -a to remove data
 
-version: '3'
+version: "3"
 services:
-      
   backend:
     build:
       context: ./backend
